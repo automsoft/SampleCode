@@ -59,6 +59,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Models.Backend, Version=4.8.2.48346, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Automsoft\RAPID\bin\Models.Backend.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Client, Version=4.0.50.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\solutions\packages\ServiceStack.Client.4.0.50\lib\net40\ServiceStack.Client.dll</HintPath>
       <Private>True</Private>
@@ -90,12 +94,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\REST API\Common\Models\Models.Backend.csproj">
-      <Project>{4bb0ca95-3b2c-4da0-9991-478ffb211706}</Project>
-      <Name>Models.Backend</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
