@@ -61,7 +61,7 @@ namespace ReadDataREST
                     foreach (var point in procesData.ProcessData)
                     {
                         // Output alarm data point to console.
-                        Console.WriteLine("Time: " + point.EventTime + ",Value: " + point.EventValue + ",Quality: " + point.Quality.ToString());
+                        Console.WriteLine($"Item: {itemName}, Time: {point.EventTime}, Value: {point.EventValue}, Quality: 0x{point.Quality.ToString("x")}");
                     }
                 }
             }
@@ -94,7 +94,7 @@ namespace ReadDataREST
                     }
 
                     // Output alarm data point to console.
-                    Console.WriteLine("Alarm time: " + point.EventTime + ",Source: " + point.Source + ",Message: " + point.Message + ",Severity: " + point.Severity + ",Attribute data: " + vdaSummary);
+                    Console.WriteLine($"Alarm time: {point.EventTime}, Source: {point.Source}, Message: {point.Message}, Severity: {point.Severity}, Attribute data: {vdaSummary}");
                 }
             }
         }
@@ -102,7 +102,6 @@ namespace ReadDataREST
         /// <summary>
         /// Get databases from REST Server.
         /// </summary>
-        /// <param name="_client"></param>
         /// <returns></returns>
         List<string> GetDatabases()
         {
@@ -114,7 +113,6 @@ namespace ReadDataREST
         /// <summary>
         /// Get alarm nodes from database.
         /// </summary>
-        /// <param name="_client"></param>
         /// <param name="dbName"></param>
         /// <returns></returns>
         List<string> GetAlarmNodes(string dbName)
@@ -126,7 +124,6 @@ namespace ReadDataREST
         /// <summary>
         /// Get alarm areas from database, node.
         /// </summary>
-        /// <param name="_client"></param>
         /// <param name="dbName"></param>
         /// <param name="nodeName"></param>
         /// <returns></returns>
@@ -141,7 +138,6 @@ namespace ReadDataREST
         /// <summary>
         /// Get Alarm data for alarm areas (for last day)
         /// </summary>
-        /// <param name="_client"></param>
         /// <param name="dbName"></param>
         /// <param name="nodeName"></param>
         /// <param name="alarmAreas"></param>
@@ -179,7 +175,6 @@ namespace ReadDataREST
         /// <summary>
         /// Get process nodes from database.
         /// </summary>
-        /// <param name="_client"></param>
         /// <param name="dbName"></param>
         /// <returns></returns>
         List<string> GetProcessNodes(string dbName)
@@ -192,7 +187,6 @@ namespace ReadDataREST
         /// <summary>
         /// Get alarm areas from database, node.
         /// </summary>
-        /// <param name="_client"></param>
         /// <param name="dbName"></param>
         /// <param name="nodeName"></param>
         /// <returns></returns>
@@ -207,7 +201,6 @@ namespace ReadDataREST
         /// <summary>
         /// Get process data for process node.
         /// </summary>
-        /// <param name="_client"></param>
         /// <param name="dbName"></param>
         /// <param name="nodeName"></param>
         /// <returns></returns>
@@ -256,7 +249,6 @@ namespace ReadDataREST
                     Password = password,
                     RememberMe = true, //important tell _client to retain permanent cookies
                 });
-
             }
         }
     }
