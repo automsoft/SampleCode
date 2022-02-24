@@ -1,1 +1,0 @@
-C# Rest Api Alarm & Events Client Example
